@@ -4,80 +4,65 @@
     <title>Tasks on </title>
     <link>/docs/tasks/</link>
     <description>Recent content in Tasks on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Oct 2020 08:48:45 +0000</lastBuildDate><atom:link href="/docs/tasks/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Oct 2020 08:48:57 +0000</lastBuildDate>
+    <atom:link href="/docs/tasks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to IL-TUR</title>
       <link>/docs/tasks/introduction/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/introduction/</guid>
       <description>IL-TUR is a benchmark of Natural Language Processing (NLP) tasks for the Indian Legal Domain, including Text Classification, Retrieval and Generation. While most existing Legal NLP benchmarks such as LexGLUE and LEXTREME are mainly concerned with text classification, we also include other types of tasks, such as text retrieval and text generation, as well as explanability. IL-TUR introduces several foundational tasks that can be useful for several downstream legal applications.</description>
     </item>
-    
     <item>
       <title>Legal Named Entity Recognition (L-NER)</title>
       <link>/docs/tasks/legal-named-entity-recognition-l-ner/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/legal-named-entity-recognition-l-ner/</guid>
-      <description>Type of Task Multi-class Sequence Labeling Dataset Joshi et al. (2023b) Language English No. of documents 105 No. of labels 12 Evaluation Metric strict macro-F1 Dataset Model Code Task Motivation and Description #Named Entity Recognition (NER) is a standard task in NLP (Yadav and Bethard, 2019). However, in the legal domain, the types of named entities one may be interested in differ. For example, one would like to identify the judge, petitioner (appellant), and respondent in the legal document.</description>
+      <description>Type of Task Multi-class Sequence Labeling Dataset Joshi et al. (2023b) Language English No. of documents 105 No. of labels 12 Evaluation Metric strict macro-F1 Dataset Model Code Task Motivation and Description #&#xD;Named Entity Recognition (NER) is a standard task in NLP (Yadav and Bethard, 2019). However, in the legal domain, the types of named entities one may be interested in differ. For example, one would like to identify the judge, petitioner (appellant), and respondent in the legal document.</description>
     </item>
-    
     <item>
       <title>Rhetorical Role Prediction (RR)</title>
       <link>/docs/tasks/rhetorical-role-prediction-rr/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/rhetorical-role-prediction-rr/</guid>
-      <description>Type of Task Multi-class Text Classification Dataset Malik et al. (2022) Language English No. of sentences 21,184 No. of labels 12 + &amp;ldquo;None&amp;rdquo; Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #As pointed out earlier, legal documents are typically long (avg. length 4,000 tokens) and highly unstructured. The information is spread throughout the document. If the legal document could be segmented into topically coherent units (such as facts, arguments, precedent, statute, etc.</description>
+      <description>Type of Task Multi-class Text Classification Dataset Malik et al. (2022) Language English No. of sentences 21,184 No. of labels 12 + &amp;ldquo;None&amp;rdquo; Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #&#xD;As pointed out earlier, legal documents are typically long (avg. length 4,000 tokens) and highly unstructured. The information is spread throughout the document. If the legal document could be segmented into topically coherent units (such as facts, arguments, precedent, statute, etc.</description>
     </item>
-    
     <item>
       <title>Court Judgment Prediction with Explanation (CJPE)</title>
       <link>/docs/tasks/court-judgment-prediction-with-explanation-cjpe/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/court-judgment-prediction-with-explanation-cjpe/</guid>
-      <description>Type of Task Binary Text Classification, Explanability Dataset ILDC (Malik et al., 2021) Language English No. of documents 34k Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #Given that India has a massive backlog of pending cases, it is imminent to develop systems that could aid the justice delivery process. To augment a judge in the judicial decision-making process, we introduce the task of Court Judgment Prediction with Explanation (CJPE).</description>
+      <description>Type of Task Binary Text Classification, Explanability Dataset ILDC (Malik et al., 2021) Language English No. of documents 34k Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #&#xD;Given that India has a massive backlog of pending cases, it is imminent to develop systems that could aid the justice delivery process. To augment a judge in the judicial decision-making process, we introduce the task of Court Judgment Prediction with Explanation (CJPE).</description>
     </item>
-    
     <item>
       <title>Bail Prediction (BAIL)</title>
       <link>/docs/tasks/bail-prediction-bail/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/bail-prediction-bail/</guid>
-      <description>Type of Task Binary Text Classification Dataset HLDC (Kapoor et al., 2022) Language Hindi No. of documents 900k Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #Majority of the pending cases in the Indian legal system are from the district-level courts. Moreover, among the pending cases in district courts, a significant chunk of cases have to do with bail application (Kapoor et al., 2022). Many of the district courts in India use regional language as the official language.</description>
+      <description>Type of Task Binary Text Classification Dataset HLDC (Kapoor et al., 2022) Language Hindi No. of documents 900k Evaluation Metric macro-F1 Dataset Model Code Task Motivation and Description #&#xD;Majority of the pending cases in the Indian legal system are from the district-level courts. Moreover, among the pending cases in district courts, a significant chunk of cases have to do with bail application (Kapoor et al., 2022). Many of the district courts in India use regional language as the official language.</description>
     </item>
-    
     <item>
       <title>Legal Statute Identification (LSI)</title>
       <link>/docs/tasks/legal-statute-identification-lsi/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/legal-statute-identification-lsi/</guid>
-      <description>Type of Task Multi-label Text Classification Dataset ILSI (Paul et al., 2022) Language English No. of documents 65k No. of labels 100 Evaluation Metric micro-F1@K Dataset Model Code Task Motivation and Description #Since India also has civil law system, one of the first steps in the judicial process manually performed by police personnel/legal professionals (based on the facts of the current situation) is to decide on which of the statutes/laws are applicable in the given setting.</description>
+      <description>Type of Task Multi-label Text Classification Dataset ILSI (Paul et al., 2022) Language English No. of documents 65k No. of labels 100 Evaluation Metric micro-F1@K Dataset Model Code Task Motivation and Description #&#xD;Since India also has civil law system, one of the first steps in the judicial process manually performed by police personnel/legal professionals (based on the facts of the current situation) is to decide on which of the statutes/laws are applicable in the given setting.</description>
     </item>
-    
     <item>
       <title>Prior Case Retrieval (PCR)</title>
       <link>/docs/tasks/prior-case-retrieval-pcr/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/prior-case-retrieval-pcr/</guid>
-      <description>Type of Task Text Retrieval Dataset IL-PCR (Joshi et al., 2023a) Language English No. of documents 7,070 Evaluation Metric micro-F1@K Dataset Model Code Task Motivation and Description #When framing a legal document, legal experts (judges and lawyers) use their expertise to cite previous cases to support their arguments/reasoning. Legal experts have relied on their expertise to cite previous cases; however, with an exponentially growing number of cases, it becomes practically impossible to recall all possible cases.</description>
+      <description>Type of Task Text Retrieval Dataset IL-PCR (Joshi et al., 2023a) Language English No. of documents 7,070 Evaluation Metric micro-F1@K Dataset Model Code Task Motivation and Description #&#xD;When framing a legal document, legal experts (judges and lawyers) use their expertise to cite previous cases to support their arguments/reasoning. Legal experts have relied on their expertise to cite previous cases; however, with an exponentially growing number of cases, it becomes practically impossible to recall all possible cases.</description>
     </item>
-    
     <item>
       <title>Summarization (SUMM)</title>
       <link>/docs/tasks/summarization-summ/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
-      
       <guid>/docs/tasks/summarization-summ/</guid>
-      <description>Type of Task Text Generation Dataset In-Abs (Shukla et al., 2022) Language English No. of documents 7,130 Type of summary Abstractive Evaluation Metric ROUGE-L, BERT-SCORE Dataset Model Code Task Motivation and Description #Going through legal documents (spanning tens of pages) can be a time-consuming and cumbersome activity; however, if there was a summary of the document, that could help legal practitioners and make their workflow more efficient.
-The task of summarization involves generating a gist (of a legal document) that captures the critical aspects of the case.</description>
+      <description>Type of Task Text Generation Dataset In-Abs (Shukla et al., 2022) Language English No. of documents 7,130 Type of summary Abstractive Evaluation Metric ROUGE-L, BERT-SCORE Dataset Model Code Task Motivation and Description #&#xD;Going through legal documents (spanning tens of pages) can be a time-consuming and cumbersome activity; however, if there was a summary of the document, that could help legal practitioners and make their workflow more efficient.&#xA;The task of summarization involves generating a gist (of a legal document) that captures the critical aspects of the case.</description>
     </item>
-    
   </channel>
 </rss>

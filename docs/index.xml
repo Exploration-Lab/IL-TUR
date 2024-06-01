@@ -4,28 +4,23 @@
     <title>Docs on </title>
     <link>/docs/</link>
     <description>Recent content in Docs on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Oct 2020 08:48:23 +0000</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:31 +0000</lastBuildDate>
+    <atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Contact</title>
       <link>/docs/contact/contact-details/</link>
       <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
-      
       <guid>/docs/contact/contact-details/</guid>
       <description>Please feel free to reach out via email</description>
     </item>
-    
     <item>
       <title>Submit</title>
       <link>/docs/submit/submit/</link>
       <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
-      
       <guid>/docs/submit/submit/</guid>
-      <description> Please use this google form for submitting your scores to leaderboard.
-Submission Guidelines #Researchers can submit their model results for single as well as multiple tasks. The submission can have different models for multiple tasks or the same model for multiple tasks.
-The submission instrctions are provided in the form itself. The submission to the leaderboard requires of the following:
-A link to the model code A link to the model weights A link to the model predictions on the test set A link to the model predictions on the dev set (if available) A published paper (if available) </description>
+      <description> Please use this google form for submitting your scores to leaderboard.&#xA;Submission Guidelines #&#xD;Researchers can submit their model results for single as well as multiple tasks. The submission can have different models for multiple tasks or the same model for multiple tasks.&#xA;The submission instrctions are provided in the form itself. The submission to the leaderboard requires of the following:&#xA;A link to the model code A link to the model weights A link to the model predictions on the test set A link to the model predictions on the dev set (if available) A published paper (if available) </description>
     </item>
-    
   </channel>
 </rss>
