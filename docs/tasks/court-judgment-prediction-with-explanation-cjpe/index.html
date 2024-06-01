@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="../../../scss/app.scss" integrity="" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Court Judgment Prediction with Explanation (CJPE) - IL-TUR</title>
+<meta name="description" content="CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)">
+<link rel="canonical" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Court Judgment Prediction with Explanation (CJPE)">
+<meta property="og:description" content="CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)">
+<meta property="og:url" content="/docs/tasks/court-judgment-prediction-with-explanation-cjpe/">
+<meta property="og:site_name" content="IL-TUR">
+<meta property="article:published_time" content="2020-10-06T08:48:57+00:00">
+  <meta property="article:modified_time" content="2020-10-06T08:48:57+00:00">
+  
+  <meta property="og:image" content="/doks.png"/>
+      <meta property="og:image:alt" content="IL-TUR">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="Court Judgment Prediction with Explanation (CJPE)">
+<meta name="twitter:description" content="CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)">
+<meta name="twitter:image" content="/doks.png">
+    <meta name="twitter:image:alt" content="Court Judgment Prediction with Explanation (CJPE)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "/#/schema/organization/1",
+      "name": "Doks",
+      "url": "/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "/#/schema/image/1",
+          "url": "/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "IL-TUR",
+      "description": "Benchmark for Legal Text Understanding and Reasoning.",
+      "publisher": {
+          "@id": "/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/",
+      "url": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/",
+      "name": "Court Judgment Prediction with Explanation (CJPE)",
+      "description": "CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted\/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)",
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+          "@id": "/#/schema/organization/1"
+        },
+      "datePublished": "2020-10-06T08:48:57CET",
+      "dateModified": "2020-10-06T08:48:57CET",
+      "breadcrumb": {
+        "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/docs/tasks/court-judgment-prediction-with-explanation-cjpe/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/",
+          "url": "/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "/docstaskscourt-judgment-prediction-with-explanation-cjpe/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Court Judgment Prediction with Explanation (CJPE)",
+          "description": "CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted\/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)",
+          "isPartOf": {
+            "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/"
+          },
+          "datePublished": "2020-10-06T08:48:57CET",
+          "dateModified": "2020-10-06T08:48:57CET",
+          "author": {
+            "@id": "/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/docs/tasks/court-judgment-prediction-with-explanation-cjpe/#/schema/image/2",
+          "url": "/doks.png",
+          "contentUrl": "/doks.png",
+          "caption": "Court Judgment Prediction with Explanation (CJPE)"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="../../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="../../../site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-xxl flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="../../../" aria-label="IL-TUR">
+      IL-TUR
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="../../../">IL-TUR</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/tasks/introduction/">Tasks</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/leaderboard/introduction/">Leaderboard</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/submit/submit/">Submit</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/contact/contact-details/">Contact</a>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="../../../"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-xxl">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-xxl" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#explanability-of-best-model">Explanability of Best Model</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#explanability-of-best-model">Explanability of Best Model</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Court Judgment Prediction with Explanation (CJPE)</h1>
+			<p class="lead">CJPE requires, given the facts and other details of a court case, predicting the final outcome, i.e., appeal granted/denied (Prediction), as well as identifying the sailent sentences leading to the decision (Explanation)</p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#explanability-of-best-model">Explanability of Best Model</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#predictions">Predictions</a></li>
+        <li><a href="#explanability-of-best-model">Explanability of Best Model</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+			</nav>
+			<div style='text-align: justify'>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Type of Task</td>
+<td style="text-align:center">Binary Text Classification, Explanability</td>
+</tr>
+<tr>
+<td style="text-align:center">Dataset</td>
+<td style="text-align:center"><code>ILDC</code> (<a href="https://aclanthology.org/2021.acl-long.313/">Malik et al., 2021</a>)</td>
+</tr>
+<tr>
+<td style="text-align:center">Language</td>
+<td style="text-align:center">English</td>
+</tr>
+<tr>
+<td style="text-align:center">No. of documents</td>
+<td style="text-align:center">34k</td>
+</tr>
+<tr>
+<td style="text-align:center">Evaluation Metric</td>
+<td style="text-align:center">macro-F1</td>
+</tr>
+</tbody>
+</table>
+<div class="col-lg-9 col-xl-8 text-center">
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://1drv.ms/f/s!AuBOJ2hW9GimgbsPCVlE80TSfjk7Ig?e=pyCkAc" role="button">Dataset</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://github.com/Exploration-Lab/CJPE" role="button">Model</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://github.com/Exploration-Lab/CJPE" role="button">Code</a>  
+</div>
+<h2 id="task-motivation-and-description">Task Motivation and Description <a href="#task-motivation-and-description" class="anchor" aria-hidden="true">#</a></h2>
+<p>Given that India has a massive backlog of pending cases, it is imminent to develop systems that could aid the justice delivery process. To <i>augment</i> a judge in the judicial decision-making process, we introduce the task of Court Judgment Prediction with Explanation (CJPE). Note that idea behind this task is not to replace human judges but to aid them. Furthermore, the task requires the system to explain its decision so that it is interpretable for a human using it.</p>
+<p><b>Formally, the task of  Court Judgment Prediction with Explanation (CJPE) involves predicting the final judgment (appeal accepted or denied, i.e., binary outcome of 0 or 1) for a given judgment document (having facts and other details) and providing the explanation for the decision.</b></p>
+<p>The explanations, in this case, are in the form of the crucial sentences in the text that lead to the predicted decision.</p>
+<h2 id="dataset">Dataset <a href="#dataset" class="anchor" aria-hidden="true">#</a></h2>
+<p>For the CJPE task, we use our previously created <code>Indian Legal Document Corpus (ILDC)</code> (<a href="https://aclanthology.org/2021.acl-long.313/">Malik et al., 2021</a>).
+ILDC is a corpus of 35k legal judgment documents (in English) from the Supreme Court of India. Each document is annotated with the ground truth (actual decision given by the judge); further, a small subset of the documents are annotated with explanations by legal experts.
+During the dataset creation process, all steps are taken concerning ethical considerations; for example, the dataset is normalized with respect to named entities to remove any biases in the data.
+Please refer to <a href="https://aclanthology.org/2021.acl-long.313/">Malik et al., (2021)</a> for more details about the dataset, annotations, and de-biasing process.
+We use the same splits (train/test/dev) as in ILDC.</p>
+<h3 id="dataset-format">Dataset Format <a href="#dataset-format" class="anchor" aria-hidden="true">#</a></h3>
+<p>The dataset directory structure is as follows:</p>
+<pre><code>Data
++-- ILDC_multi.zip      // cases containing multiple appeals
++-- ILDC_single.zip     // cases containing a single appeal
++-- ILDC_expert.zip     // cases annotated with important sentences by experts
++-- disclaimer.txt
+</code></pre>
+<p>On extracting <var>ILDC_single.zip</var> and <var>ILDC_multiple.zip</var>, csv files <var>ILDC_single.csv</var> and <var>ILDC_multi.csv</var> are generated. Each csv has the following columns.</p>
+<pre><code>text: String        // entire document text
+label: int          // 0/1 label
+split: String       // either of 'train'/'dev'/'test'
+name: String        // filename
+</code></pre>
+<p>On extracting <var>ILDC_expert.zip</var>, we get the following structure.</p>
+<pre><code>ILDC_expert
++-- annotation
+|   +-- &lt;filename&gt;          // FOLDER containing annotations for case &lt;filename&gt;
+|   |   +-- user1.json      // annotation for expert 1, and so on  
+|   |   +-- user2.json
+|   |   +-- user3.json
+|   |   +-- user4.json
+|   |   +-- user5.json
++-- source
+|   +-- &lt;filename&gt;          // FILE containing text for case &lt;filename&gt;  
+</code></pre>
+<p>Each expert annotation json has the following format.</p>
+<pre><code>Dict{
+  &quot;views&quot;: {
+    &quot;_InitialView&quot;: {
+      &quot;Sentence&quot;: List[Dict]    // each Dict stores sentence boundaries
+      &quot;Token&quot;: List[Dict]       // each Dict stores token boundaries
+      &quot;ACCEPTED&quot;: List[Dict]    // each Dict stores most important (Rank 0) span boundaries
+      &quot;Rank1&quot;: List[Dict]       // each Dict stores other less important (Rank 1) span boundaries, and so on
+      &quot;Rank2&quot;: List[Dict]
+      &quot;Rank3&quot;: List[Dict]
+      &quot;Rank4&quot;: List[Dict]
+      &quot;Rank5&quot;: List[Dict]
+    }
+  }
+}
+</code></pre>
+<p>The json has a complex nested format, containing many other keys (not shown above), which are not needed for extracting important spans.
+All boundaries are defined in terms of starting char index and ending char index of the sentence/token/span.</p>
+<h2 id="task-evaluation">Task Evaluation <a href="#task-evaluation" class="anchor" aria-hidden="true">#</a></h2>
+<p>Prediction part of the CJPE task is evaluated using standard <var>accuracy</var> and <var>macro-F1</var> score metric. The explanation part is evaluated using <var>ROUGE scores</var> (<a href="https://aclanthology.org/W04-1013/">Lin, 2004</a>).</p>
+<h2 id="baseline-models">Baseline Models <a href="#baseline-models" class="anchor" aria-hidden="true">#</a></h2>
+<p>We experimented with a battery of models for the CJPE task. Details are provided in <a href="https://aclanthology.org/2021.acl-long.313/">Malik et al. (2021)</a>. Here we explain only the baseline model. We use a competitive baseline model: Hierarchical Transformer. In particular, we use the XLNet+BiGRU model. Since legal documents are long, the document is divided sequentially into chunks (of size 512 tokens), and then a representation is learned for each chunk using an XLNet model. A BiGRU model is applied on the top of these chunks, and a feed-forward network for the prediction follows this. For the explanation part, we use the occlusion method. The basic idea behind the occlusion method is to mask a sentence and then see the change in prediction probability. The prediction probability change indicates the sentence salience for making the prediction. More the change in probability, the more salient the sentence.</p>
+<p>A detailed analysis of the model and a case study is provided in <a href="https://aclanthology.org/2021.acl-long.313/">Malik et al. (2021)</a>. In general, the baseline model (best among all the experimented models) has a performance of about 76% F1 score and is far from the average human performance of 94%.</p>
+<h2 id="results">Results <a href="#results" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="predictions">Predictions <a href="#predictions" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">mP</th>
+<th style="text-align:center">mR</th>
+<th style="text-align:center">mF1</th>
+<th style="text-align:center">Acc.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">XLNet + BiGRU (trained on <code>ILDC-single</code>)</td>
+<td style="text-align:center">75.11</td>
+<td style="text-align:center">75.06</td>
+<td style="text-align:center">75.09</td>
+<td style="text-align:center">75.06</td>
+</tr>
+<tr>
+<td style="text-align:center">XLNet + BiGRU + Attn. (trained on <code>ILDC-single</code>)</td>
+<td style="text-align:center">75.26</td>
+<td style="text-align:center">75.22</td>
+<td style="text-align:center">75.25</td>
+<td style="text-align:center">75.22</td>
+</tr>
+<tr>
+<td style="text-align:center">XLNet + BiGRU (trained on <code>ILDC-multi</code>)</td>
+<td style="text-align:center"><b>77.80</b></td>
+<td style="text-align:center"><b>77.78</b></td>
+<td style="text-align:center"><b>77.79</b></td>
+<td style="text-align:center"><b>77.78</b></td>
+</tr>
+<tr>
+<td style="text-align:center">XLNet + BiGRU + Attn. (trained on <code>ILDC-multi</code>)</td>
+<td style="text-align:center">77.32</td>
+<td style="text-align:center">76.82</td>
+<td style="text-align:center">77.07</td>
+<td style="text-align:center"><b>77.78</b></td>
+</tr>
+</tbody>
+</table>
+<h3 id="explanability-of-best-model">Explanability of Best Model <a href="#explanability-of-best-model" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Metric</th>
+<th style="text-align:center">Expert 1</th>
+<th style="text-align:center">Expert 2</th>
+<th style="text-align:center">Expert 3</th>
+<th style="text-align:center">Expert 4</th>
+<th style="text-align:center">Expert 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Jaccard sim.</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">0.317</td>
+<td style="text-align:center">0.328</td>
+<td style="text-align:center">0.324</td>
+<td style="text-align:center">0.318</td>
+</tr>
+<tr>
+<td style="text-align:center">Overlap-Min</td>
+<td style="text-align:center">0.744</td>
+<td style="text-align:center">0.589</td>
+<td style="text-align:center">0.810</td>
+<td style="text-align:center">0.834</td>
+<td style="text-align:center">0.617</td>
+</tr>
+<tr>
+<td style="text-align:center">Overlap-Max</td>
+<td style="text-align:center">0.390</td>
+<td style="text-align:center">0.414</td>
+<td style="text-align:center">0.360</td>
+<td style="text-align:center">0.350</td>
+<td style="text-align:center">0.401</td>
+</tr>
+<tr>
+<td style="text-align:center">ROUGE-1</td>
+<td style="text-align:center">0.444</td>
+<td style="text-align:center">0.517</td>
+<td style="text-align:center">0.401</td>
+<td style="text-align:center">0.391</td>
+<td style="text-align:center">0.501</td>
+</tr>
+<tr>
+<td style="text-align:center">ROUGE-2</td>
+<td style="text-align:center">0.303</td>
+<td style="text-align:center">0.295</td>
+<td style="text-align:center">0.296</td>
+<td style="text-align:center">0.297</td>
+<td style="text-align:center">0.294</td>
+</tr>
+<tr>
+<td style="text-align:center"><b>ROUGE-L</b></td>
+<td style="text-align:center"><b>0.439</b></td>
+<td style="text-align:center"><b>0.407</b></td>
+<td style="text-align:center"><b>0.423</b></td>
+<td style="text-align:center"><b>0.444</b></td>
+<td style="text-align:center"><b>0.407</b></td>
+</tr>
+<tr>
+<td style="text-align:center">BLEU</td>
+<td style="text-align:center">0.160</td>
+<td style="text-align:center">0.280</td>
+<td style="text-align:center">0.099</td>
+<td style="text-align:center">0.093</td>
+<td style="text-align:center">0.248</td>
+</tr>
+<tr>
+<td style="text-align:center">Meteor</td>
+<td style="text-align:center">0.220</td>
+<td style="text-align:center">0.30</td>
+<td style="text-align:center">0.180</td>
+<td style="text-align:center">0.177</td>
+<td style="text-align:center">0.279</td>
+</tr>
+</tbody>
+</table>
+</div>
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="../../../docs/leaderboard/cjpe-leaderboard/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; CJPE Leaderboard
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="../../../docs/leaderboard/bail-leaderboard/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					BAIL Leaderboard &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://www.netlify.com/">Netlify</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="../../../js/bootstrap.min.87685cf4e6585276ff9e7b5d0b97e792615af6921e77821315d1ca7c5511ac2f30667e16c0d031e680ca8b57f63f6c0f6c4a232da777cce474b501ed81e090a9.js" integrity="sha512-h2hc9OZYUnb/nntdC5fnkmFa9pIed4ITFdHKfFURrC8wZn4WwNAx5oDKi1f2P2wPbEojLad3zOR0tQHtgeCQqQ==" crossorigin="anonymous" defer></script>
+  <script src="../../../js/highlight.min.56a414730f1135fe77b5ea30bf74a2cc4101a6f386e85e5b789c800570cc33d33054000f45932c053a59b41018f72687867254a80e1b9710671852492533162f.js" integrity="sha512-VqQUcw8RNf53teowv3SizEEBpvOG6F5beJyABXDMM9MwVAAPRZMsBTpZtBAY9yaHhnJUqA4blxBnGFJJJTMWLw==" crossorigin="anonymous" defer></script>
+  <script src="../../../main.min.162c56a0426544de0d010e66c56e321579655c400c9aae06a6823e7682de379adadf2165bd416fea191e4e7e410fbf1fd2c35a759aa43ff2e3787067669bf81b.js" integrity="sha512-FixWoEJlRN4NAQ5mxW4yFXllXEAMmq4GpoI&#43;doLeN5ra3yFlvUFv6hkeTn5BD78f0sNadZqkP/LjeHBnZpv4Gw==" crossorigin="anonymous" defer></script>
+  <script src="../../../index.min.81dc7a3e6accb11e3963f950b29d11c91d5345d576729936d70455ef862bf69d972a1e84e8a7d1b9a17eb9b1fe65a7aab9dfb85d2c4bab650c6602f2d7e15ed2.js" integrity="sha512-gdx6PmrMsR45Y/lQsp0RyR1TRdV2cpk21wRV74Yr9p2XKh6E6KfRuaF&#43;ubH&#43;Zaequd&#43;4XSxLq2UMZgLy1&#43;Fe0g==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>

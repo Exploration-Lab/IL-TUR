@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    <url>
+      <loc>/docs/tasks/introduction/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/legal-named-entity-recognition-l-ner/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/rhetorical-role-prediction-rr/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/court-judgment-prediction-with-explanation-cjpe/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/bail-prediction-bail/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/legal-statute-identification-lsi/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/prior-case-retrieval-pcr/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/tasks/summarization-summ/</loc>
+      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    </urlset>

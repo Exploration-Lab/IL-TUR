@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="../../../scss/app.scss" integrity="" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Prior Case Retrieval (PCR) - IL-TUR</title>
+<meta name="description" content="PCR requires identifying relevant prior cases from a set of candidates, given a query case document">
+<link rel="canonical" href="../../../docs/tasks/prior-case-retrieval-pcr/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prior Case Retrieval (PCR)">
+<meta property="og:description" content="PCR requires identifying relevant prior cases from a set of candidates, given a query case document">
+<meta property="og:url" content="/docs/tasks/prior-case-retrieval-pcr/">
+<meta property="og:site_name" content="IL-TUR">
+<meta property="article:published_time" content="2020-10-06T08:48:57+00:00">
+  <meta property="article:modified_time" content="2020-10-06T08:48:57+00:00">
+  
+  <meta property="og:image" content="/doks.png"/>
+      <meta property="og:image:alt" content="IL-TUR">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="Prior Case Retrieval (PCR)">
+<meta name="twitter:description" content="PCR requires identifying relevant prior cases from a set of candidates, given a query case document">
+<meta name="twitter:image" content="/doks.png">
+    <meta name="twitter:image:alt" content="Prior Case Retrieval (PCR)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "/#/schema/organization/1",
+      "name": "Doks",
+      "url": "/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "/#/schema/image/1",
+          "url": "/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "IL-TUR",
+      "description": "Benchmark for Legal Text Understanding and Reasoning.",
+      "publisher": {
+          "@id": "/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "/docs/tasks/prior-case-retrieval-pcr/",
+      "url": "/docs/tasks/prior-case-retrieval-pcr/",
+      "name": "Prior Case Retrieval (PCR)",
+      "description": "PCR requires identifying relevant prior cases from a set of candidates, given a query case document",
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+          "@id": "/#/schema/organization/1"
+        },
+      "datePublished": "2020-10-06T08:48:57CET",
+      "dateModified": "2020-10-06T08:48:57CET",
+      "breadcrumb": {
+        "@id": "/docs/tasks/prior-case-retrieval-pcr/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/docs/tasks/prior-case-retrieval-pcr/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/docs/tasks/prior-case-retrieval-pcr/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/docs/tasks/prior-case-retrieval-pcr/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/",
+          "url": "/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "/docstasksprior-case-retrieval-pcr/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Prior Case Retrieval (PCR)",
+          "description": "PCR requires identifying relevant prior cases from a set of candidates, given a query case document",
+          "isPartOf": {
+            "@id": "/docs/tasks/prior-case-retrieval-pcr/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/docs/tasks/prior-case-retrieval-pcr/"
+          },
+          "datePublished": "2020-10-06T08:48:57CET",
+          "dateModified": "2020-10-06T08:48:57CET",
+          "author": {
+            "@id": "/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "/docs/tasks/prior-case-retrieval-pcr/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/docs/tasks/prior-case-retrieval-pcr/#/schema/image/2",
+          "url": "/doks.png",
+          "contentUrl": "/doks.png",
+          "caption": "Prior Case Retrieval (PCR)"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="../../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="../../../site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-xxl flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="../../../" aria-label="IL-TUR">
+      IL-TUR
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="../../../">IL-TUR</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/tasks/introduction/">Tasks</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/leaderboard/introduction/">Leaderboard</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/submit/submit/">Submit</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/contact/contact-details/">Contact</a>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="../../../"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-xxl">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-xxl" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results-of-events-filtered-docs">Results of Events Filtered Docs</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results-of-events-filtered-docs">Results of Events Filtered Docs</a></li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Prior Case Retrieval (PCR)</h1>
+			<p class="lead">PCR requires identifying relevant prior cases from a set of candidates, given a query case document</p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results-of-events-filtered-docs">Results of Events Filtered Docs</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results-of-events-filtered-docs">Results of Events Filtered Docs</a></li>
+  </ul>
+</nav>
+  </div>
+
+			</nav>
+			<div style='text-align: justify'>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Type of Task</td>
+<td style="text-align:center">Text Retrieval</td>
+</tr>
+<tr>
+<td style="text-align:center">Dataset</td>
+<td style="text-align:center">IL-PCR (<a href="">Joshi et al., 2023a</a>)</td>
+</tr>
+<tr>
+<td style="text-align:center">Language</td>
+<td style="text-align:center">English</td>
+</tr>
+<tr>
+<td style="text-align:center">No. of documents</td>
+<td style="text-align:center">7,070</td>
+</tr>
+<tr>
+<td style="text-align:center">Evaluation Metric</td>
+<td style="text-align:center">micro-F1@K</td>
+</tr>
+</tbody>
+</table>
+<div class="col-lg-9 col-xl-8 text-center">
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://1drv.ms/f/s!AuBOJ2hW9GimgbotGnN0nwbXPUzg5Q?e=KDezhw" role="button">Dataset</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://github.com/Exploration-Lab/IL-PCR" role="button">Model</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://github.com/Exploration-Lab/IL-PCR" role="button">Code</a>  
+</div>
+<h2 id="task-motivation-and-description">Task Motivation and Description <a href="#task-motivation-and-description" class="anchor" aria-hidden="true">#</a></h2>
+<p>When framing a legal document, legal experts (judges and lawyers) use their expertise to cite previous cases to support their arguments/reasoning.
+Legal experts have relied on their expertise to cite previous cases; however, with an exponentially growing number of cases, it becomes practically impossible to recall all possible cases.
+Automating this process can make the jobs of legal experts easier and expedite the justice delivery process.</p>
+<p><b>Given a query document (without citations), the task of Prior Case Retrieval (PCR) is to automatically retrieve the legal documents from the candidate pool which are relevant (and hence cited) in the given query document.</b></p>
+<p>Note that in contrast to standard relevance based on semantic similarity in the case of information retrieval tasks, relevance in the legal domain is mainly about similar factual situations and previous legal precedents.
+Hence, PCR requires a model to learn to reason about legal documents by following the chain of facts and arguments presented, much like a judge.</p>
+<h2 id="dataset">Dataset <a href="#dataset" class="anchor" aria-hidden="true">#</a></h2>
+<p>For the task of PCR we created <code>Indian Legal Prior Case Retrieval (IL-PCR)</code> corpus.
+IL-PCR corpus (7,070 documents) is created by scraping legal documents (available in the public domain) from the <a href="https://indiankanoon.org/">IndianKanoon</a> website.
+Individuals&rsquo; and organizations&rsquo; names are anonymized to remove any biases in the models.
+Each query case is annotated with ground truth labels indicating the relevant candidates&rsquo; cases.</p>
+<h3 id="dataset-format">Dataset Format <a href="#dataset-format" class="anchor" aria-hidden="true">#</a></h3>
+<p>The dataset directory structure is as follows:</p>
+<pre><code>IL-PCR
++-- ik_train.zip
++-- ik_dev.zip
++-- ik_test.zip
+</code></pre>
+<p>On extracting each zip file, we get the following structure:</p>
+<pre><code>ik_&lt;split&gt;          // split is either of train/dev/test
++-- candidate       // folder containing txt files for each candidate case document
++-- query           // folder containing txt files for each query case document
++-- test.csv        // csv file linking query to candidates
++-- test.json       // json file linking query to candidates
+</code></pre>
+<p>Each of the txt files represent a case document, and contain the text, split into sentences.
+<var>test.json</var> has the following format:</p>
+<pre><code>Dict{
+  &quot;Query Set&quot;: List[
+    Dict{                                   // each Dict stores the links between a query and its relevant candidates
+      &quot;id&quot;: String                          // query filename
+      &quot;query_name&quot;: String                  // query filename
+      &quot;relevant candidates&quot;: List[String]   // each String is a relevant candidate filename
+    }
+  ]
+  &quot;Candidate Set&quot;: List[                    // List stores all the candidate filenames (global)
+    Dict{                                   
+      &quot;id&quot;: String
+    }
+  ]
+}
+</code></pre>
+<h2 id="task-evaluation">Task Evaluation <a href="#task-evaluation" class="anchor" aria-hidden="true">#</a></h2>
+<p><var>Micro-averaged F1 score</var> is used as the evaluation metric.
+Each candidate is assigned a relevance score by the model based on the given query case.
+The prediction (i.e., whether a candidate is cited or not) is done based on the Top-K-ranked candidates.</p>
+<h2 id="baseline-models">Baseline Models <a href="#baseline-models" class="anchor" aria-hidden="true">#</a></h2>
+<p>We experimented with various models (including transformer based) for the PCR task. Please refer to the original paper for details. Here, we discuss the baseline model. The baseline model is based on events in the legal document. In our case, <i>events</i> are defined as a tuple consisting of a predicate (typically a verb) and its corresponding arguments (such as subject, object, etc.). The events are obtained by parsing legal documents with a dependency parser. The document is represented by Event tuples. The relevance between the query and candidates is calculated by comparing the event-based representation of the documents.</p>
+<p>We have observed that the event-based models perform the best but still have a micro F1 score of 39.15, which is relatively low. Surprisingly, transformer-based models do not perform well on the PCR task. For more details, please refer to the original paper.</p>
+<h2 id="results-of-events-filtered-docs">Results of Events Filtered Docs <a href="#results-of-events-filtered-docs" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center"><i>K</i></th>
+<th style="text-align:center">μP@<i>K</i></th>
+<th style="text-align:center">μR@<i>K</i></th>
+<th style="text-align:center">μF1@<i>K</i></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">BM25</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">24.26</td>
+<td style="text-align:center">16.50</td>
+<td style="text-align:center">19.64</td>
+</tr>
+<tr>
+<td style="text-align:center">BM25 (Bi-gram)</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">33.69</td>
+<td style="text-align:center">27.50</td>
+<td style="text-align:center">30.28</td>
+</tr>
+<tr>
+<td style="text-align:center">BM25 (Tri-gram)</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center"><b>41.35</b></td>
+<td style="text-align:center">33.76</td>
+<td style="text-align:center">37.17</td>
+</tr>
+<tr>
+<td style="text-align:center">BM25 (Quad-gram)</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">40.12</td>
+<td style="text-align:center"><b>38.2</b></td>
+<td style="text-align:center"><b>39.15</b></td>
+</tr>
+<tr>
+<td style="text-align:center">BM25 (Penta-gram)</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">39.57</td>
+<td style="text-align:center">37.70</td>
+<td style="text-align:center">38.61</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="../../../docs/tasks/legal-statute-identification-lsi/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; Legal Statute Identification (LSI)
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="../../../docs/tasks/summarization-summ/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					Summarization (SUMM) &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://www.netlify.com/">Netlify</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="../../../js/bootstrap.min.87685cf4e6585276ff9e7b5d0b97e792615af6921e77821315d1ca7c5511ac2f30667e16c0d031e680ca8b57f63f6c0f6c4a232da777cce474b501ed81e090a9.js" integrity="sha512-h2hc9OZYUnb/nntdC5fnkmFa9pIed4ITFdHKfFURrC8wZn4WwNAx5oDKi1f2P2wPbEojLad3zOR0tQHtgeCQqQ==" crossorigin="anonymous" defer></script>
+  <script src="../../../js/highlight.min.56a414730f1135fe77b5ea30bf74a2cc4101a6f386e85e5b789c800570cc33d33054000f45932c053a59b41018f72687867254a80e1b9710671852492533162f.js" integrity="sha512-VqQUcw8RNf53teowv3SizEEBpvOG6F5beJyABXDMM9MwVAAPRZMsBTpZtBAY9yaHhnJUqA4blxBnGFJJJTMWLw==" crossorigin="anonymous" defer></script>
+  <script src="../../../main.min.162c56a0426544de0d010e66c56e321579655c400c9aae06a6823e7682de379adadf2165bd416fea191e4e7e410fbf1fd2c35a759aa43ff2e3787067669bf81b.js" integrity="sha512-FixWoEJlRN4NAQ5mxW4yFXllXEAMmq4GpoI&#43;doLeN5ra3yFlvUFv6hkeTn5BD78f0sNadZqkP/LjeHBnZpv4Gw==" crossorigin="anonymous" defer></script>
+  <script src="../../../index.min.81dc7a3e6accb11e3963f950b29d11c91d5345d576729936d70455ef862bf69d972a1e84e8a7d1b9a17eb9b1fe65a7aab9dfb85d2c4bab650c6602f2d7e15ed2.js" integrity="sha512-gdx6PmrMsR45Y/lQsp0RyR1TRdV2cpk21wRV74Yr9p2XKh6E6KfRuaF&#43;ubH&#43;Zaequd&#43;4XSxLq2UMZgLy1&#43;Fe0g==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>

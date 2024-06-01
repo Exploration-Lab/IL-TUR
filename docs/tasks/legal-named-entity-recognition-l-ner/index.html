@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="../../../fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="../../../scss/app.scss" integrity="" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Legal Named Entity Recognition (L-NER) - IL-TUR</title>
+<meta name="description" content="L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as &lt;i&gt;Judge&lt;/i&gt;, &lt;i&gt;Appellant&lt;/i&gt;, &lt;i&gt;Respondent&lt;/i&gt;, etc.">
+<link rel="canonical" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Legal Named Entity Recognition (L-NER)">
+<meta property="og:description" content="L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as &lt;i&gt;Judge&lt;/i&gt;, &lt;i&gt;Appellant&lt;/i&gt;, &lt;i&gt;Respondent&lt;/i&gt;, etc.">
+<meta property="og:url" content="/docs/tasks/legal-named-entity-recognition-l-ner/">
+<meta property="og:site_name" content="IL-TUR">
+<meta property="article:published_time" content="2020-10-06T08:48:57+00:00">
+  <meta property="article:modified_time" content="2020-10-06T08:48:57+00:00">
+  
+  <meta property="og:image" content="/doks.png"/>
+      <meta property="og:image:alt" content="IL-TUR">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="Legal Named Entity Recognition (L-NER)">
+<meta name="twitter:description" content="L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as &lt;i&gt;Judge&lt;/i&gt;, &lt;i&gt;Appellant&lt;/i&gt;, &lt;i&gt;Respondent&lt;/i&gt;, etc.">
+<meta name="twitter:image" content="/doks.png">
+    <meta name="twitter:image:alt" content="Legal Named Entity Recognition (L-NER)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "/#/schema/organization/1",
+      "name": "Doks",
+      "url": "/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "/#/schema/image/1",
+          "url": "/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "IL-TUR",
+      "description": "Benchmark for Legal Text Understanding and Reasoning.",
+      "publisher": {
+          "@id": "/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/",
+      "url": "/docs/tasks/legal-named-entity-recognition-l-ner/",
+      "name": "Legal Named Entity Recognition (L-NER)",
+      "description": "L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as \u003ci\u003eJudge\u003c\/i\u003e, \u003ci\u003eAppellant\u003c\/i\u003e, \u003ci\u003eRespondent\u003c\/i\u003e, etc.",
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+          "@id": "/#/schema/organization/1"
+        },
+      "datePublished": "2020-10-06T08:48:57CET",
+      "dateModified": "2020-10-06T08:48:57CET",
+      "breadcrumb": {
+        "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/docs/tasks/legal-named-entity-recognition-l-ner/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/",
+          "url": "/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@id": "/docstaskslegal-named-entity-recognition-l-ner/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Legal Named Entity Recognition (L-NER)",
+          "description": "L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as \u003ci\u003eJudge\u003c\/i\u003e, \u003ci\u003eAppellant\u003c\/i\u003e, \u003ci\u003eRespondent\u003c\/i\u003e, etc.",
+          "isPartOf": {
+            "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/"
+          },
+          "datePublished": "2020-10-06T08:48:57CET",
+          "dateModified": "2020-10-06T08:48:57CET",
+          "author": {
+            "@id": "/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/docs/tasks/legal-named-entity-recognition-l-ner/#/schema/image/2",
+          "url": "/doks.png",
+          "contentUrl": "/doks.png",
+          "caption": "Legal Named Entity Recognition (L-NER)"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="../../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="../../../site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-xxl flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="../../../" aria-label="IL-TUR">
+      IL-TUR
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="../../../">IL-TUR</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/tasks/introduction/">Tasks</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/leaderboard/introduction/">Leaderboard</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/submit/submit/">Submit</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="../../../docs/contact/contact-details/">Contact</a>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="../../../"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-xxl">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-xxl" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-ef615563c8e8ea902c7fcac3cd2c4246" aria-expanded="true">
+          Tasks
+        </button>
+        <div class="collapse show" id="section-ef615563c8e8ea902c7fcac3cd2c4246">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/introduction/">Introduction to IL-TUR</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="../../../docs/tasks/legal-named-entity-recognition-l-ner/">Legal Named Entity Recognition (L-NER)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/rhetorical-role-prediction-rr/">Rhetorical Role Prediction (RR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/court-judgment-prediction-with-explanation-cjpe/">Court Judgment Prediction with Explanation (CJPE)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/prior-case-retrieval-pcr/">Prior Case Retrieval (PCR)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/summarization-summ/">Summarization (SUMM)</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-5adf8cfd993b776f32a0a9d75c5f2449" aria-expanded="false">
+          Leaderboards
+        </button>
+        <div class="collapse" id="section-5adf8cfd993b776f32a0a9d75c5f2449">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/introduction/">Introduction</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/all-task-leaderboard/">All Tasks Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lner-leaderboard/">L-NER Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/rr-leaderboard/">RR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/cjpe-leaderboard/">CJPE Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/bail-leaderboard/">BAIL Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/lsi-leaderboard/">LSI Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/pcr-leaderboard/">PCR Leaderboard</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/leaderboard/summ-leaderboard/">SUMM Leaderboard</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Legal Named Entity Recognition (L-NER)</h1>
+			<p class="lead">L-NER aims to predict from a court case document, the entities belonging to classes of legal interest such as <i>Judge</i>, <i>Appellant</i>, <i>Respondent</i>, etc.</p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#task-motivation-and-description">Task Motivation and Description</a></li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li><a href="#dataset-format">Dataset Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#task-evaluation">Task Evaluation</a></li>
+    <li><a href="#baseline-models">Baseline Models</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav>
+  </div>
+
+			</nav>
+			<div style='text-align: justify'>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Type of Task</td>
+<td style="text-align:center">Multi-class Sequence Labeling</td>
+</tr>
+<tr>
+<td style="text-align:center">Dataset</td>
+<td style="text-align:center"><a href="">Joshi et al. (2023b)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Language</td>
+<td style="text-align:center">English</td>
+</tr>
+<tr>
+<td style="text-align:center">No. of documents</td>
+<td style="text-align:center">105</td>
+</tr>
+<tr>
+<td style="text-align:center">No. of labels</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">Evaluation Metric</td>
+<td style="text-align:center">strict macro-F1</td>
+</tr>
+</tbody>
+</table>
+<div class="col-lg-9 col-xl-8 text-center">
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://1drv.ms/f/s!AuBOJ2hW9Gimgbl0-UY_ydhQvfF7_g?e=vcrHPD" role="button">Dataset</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://1drv.ms/f/s!AuBOJ2hW9GimgfwveSvzz6lwu0GrPQ?e=GC53SB" role="button">Model</a>
+  <a class="btn btn-primary btn-lg px-4 mb-2" href="https://1drv.ms/f/s!AuBOJ2hW9Gimgo0U74qC4QIAk31Kjg?e=Ya458K" role="button">Code</a>  
+</div>
+<h2 id="task-motivation-and-description">Task Motivation and Description <a href="#task-motivation-and-description" class="anchor" aria-hidden="true">#</a></h2>
+<p>Named Entity Recognition (NER) is a standard task in NLP (<a href="https://aclanthology.org/C18-1182/">Yadav and Bethard, 2019</a>). However, in the legal domain, the types of named entities one may be interested in differ. For example, one would like to identify the <i>judge</i>, <i>petitioner (appellant)</i>, and <i>respondent</i> in the legal document. If one were to run a standard NER system on a legal document, the judge, petitioner, and respondent would all be labeled with a <i>PERSON</i> tag. Hence, a separate task is needed to identify the legal named entities in the documents. L-NER is a foundational task and can be helpful in various applications related to information extraction, knowledge graph creation, legal search, and other legal tasks. Further, L-NER could be useful in anonymizing the documents used for training legal text understanding models; this can further help to reduce bias.</p>
+<p><b>Formally, given a legal document, the task of Legal Named Entity Recognition is to identify the legal named entities (set of 12 entity types), namely, Appellant, Respondent, Judge, Appellant Counsel, Respondent Counsel, Court, Authority, Witness, Statute, Precedent, Date, and Case Number.</b></p>
+<p>The NE classes were derived after in-depth discussions with legal experts.</p>
+<h2 id="dataset">Dataset <a href="#dataset" class="anchor" aria-hidden="true">#</a></h2>
+<p>For the L-NER task, we collected a total of 105 cases documents (in English), publicly available at the <a href="https://www.indiankanoon.org">IndianKanoon</a> website.
+The collected documents belong to the Supreme Court of India (SCI) and some state High Courts. With the help of legal experts (a law professor and law graduates from a reputed law school), these documents are annotated with 12 entity types mentioned above.</p>
+<h3 id="dataset-format">Dataset Format <a href="#dataset-format" class="anchor" aria-hidden="true">#</a></h3>
+<p>The dataset directory structure is as follows:</p>
+<pre><code>Dataset
++-- 1.json
++-- 2.json
++-- 3.json
++-- labels.txt
+</code></pre>
+<p>Each of these files corresponds to 3 separate folds of data. <var>labels.txt</var> enumerates all the labels.</p>
+<p>The structure of each json is as follows:</p>
+<pre><code>Dict{
+  'version': String
+  'data': List[
+    Dict{                 // each Dict represents a single document
+      'id': String, 
+      'text': String,
+      'labels': List[
+        Tuple(            // each Tuple represents a single entity
+          int,            // starting char index of entity span
+          int,            // ending char index of entity span
+          String,         // label type
+          String          // entity name
+        )
+      ]
+    }
+  ]
+}
+</code></pre>
+<h2 id="task-evaluation">Task Evaluation <a href="#task-evaluation" class="anchor" aria-hidden="true">#</a></h2>
+<p>NER can be formulated as a  sequence prediction task, where each word receives either of the labels {<code>B-X</code>, <code>I-X</code>, <code>O</code>} as per the popular <var>B-I-O scheme</var> (<a href="https://aclanthology.org/C18-1182/">Yadav and Bethard, 2019</a>) (<code>X</code> represents any of the legal classes we are interested in).
+We use standard metrics of <var>strict macro-averaged precision, recall, and F1 score</var> for evaluation. The <var>strict</var> score assumes a correct match only if <b>both</b> the entity boundary and entity type are correctly predicted.</p>
+<h2 id="baseline-models">Baseline Models <a href="#baseline-models" class="anchor" aria-hidden="true">#</a></h2>
+<p>We perform NER based on token representations generated by BERT-based models. Since each document in the dataset does not come pre-segmented into sentences or paragraphs, we need to chunk documents before passing them to BERT, as case documents easily exceed the token limits of BERT.
+However, unlike other tasks like text classification, we need to devise a chunking strategy to avoid splitting true NEs into different chunks.
+For this, we choose to chunk at the last stopword (based on NLTK&rsquo;s list of English stopwords), which satisfies the chunk size limit.
+The assumption is that these stopwords are not expected to be part of entity names.</p>
+<p>We experiment with four different BERT encoders:</p>
+<p>(i) <a href="https://aclanthology.org/N19-1423/">bert-base-uncased</a>,</p>
+<p>(ii) <a href="https://aclanthology.org/2020.findings-emnlp.261/">LegalBERT</a>,</p>
+<p>(iii) <a href="https://dl.acm.org/doi/abs/10.1145/3462757.3466088">CaseLawBERT</a>,</p>
+<p>(iv) <a href="https://arxiv.org/abs/2209.06049">InLegalBERT</a></p>
+<h2 id="results">Results <a href="#results" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">Strict mP</th>
+<th style="text-align:center">Strict mR</th>
+<th style="text-align:center">Strict mF1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">86.50 ± 2.12</td>
+<td style="text-align:center">84.09 ± 3.61</td>
+<td style="text-align:center">85.22 ± 2.90</td>
+</tr>
+<tr>
+<td style="text-align:center">LegalBERT</td>
+<td style="text-align:center">88.62 ± 0.54</td>
+<td style="text-align:center">85.83 ± 0.75</td>
+<td style="text-align:center">87.14 ± 0.62</td>
+</tr>
+<tr>
+<td style="text-align:center">CaseLawBERT</td>
+<td style="text-align:center">89.96 ± 0.65</td>
+<td style="text-align:center">86.30 ± 0.42</td>
+<td style="text-align:center">88.05 ± 0.48</td>
+</tr>
+<tr>
+<td style="text-align:center">InLegalBERT</td>
+<td style="text-align:center"><b>93.28</b> ± 0.23</td>
+<td style="text-align:center"><b>90.38</b> ± 0.05</td>
+<td style="text-align:center"><b>91.78</b> ± 0.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="../../../docs/leaderboard/lner-leaderboard/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; L-NER Leaderboard
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="../../../docs/leaderboard/rr-leaderboard/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					RR Leaderboard &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://www.netlify.com/">Netlify</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="../../../js/bootstrap.min.87685cf4e6585276ff9e7b5d0b97e792615af6921e77821315d1ca7c5511ac2f30667e16c0d031e680ca8b57f63f6c0f6c4a232da777cce474b501ed81e090a9.js" integrity="sha512-h2hc9OZYUnb/nntdC5fnkmFa9pIed4ITFdHKfFURrC8wZn4WwNAx5oDKi1f2P2wPbEojLad3zOR0tQHtgeCQqQ==" crossorigin="anonymous" defer></script>
+  <script src="../../../js/highlight.min.56a414730f1135fe77b5ea30bf74a2cc4101a6f386e85e5b789c800570cc33d33054000f45932c053a59b41018f72687867254a80e1b9710671852492533162f.js" integrity="sha512-VqQUcw8RNf53teowv3SizEEBpvOG6F5beJyABXDMM9MwVAAPRZMsBTpZtBAY9yaHhnJUqA4blxBnGFJJJTMWLw==" crossorigin="anonymous" defer></script>
+  <script src="../../../main.min.162c56a0426544de0d010e66c56e321579655c400c9aae06a6823e7682de379adadf2165bd416fea191e4e7e410fbf1fd2c35a759aa43ff2e3787067669bf81b.js" integrity="sha512-FixWoEJlRN4NAQ5mxW4yFXllXEAMmq4GpoI&#43;doLeN5ra3yFlvUFv6hkeTn5BD78f0sNadZqkP/LjeHBnZpv4Gw==" crossorigin="anonymous" defer></script>
+  <script src="../../../index.min.81dc7a3e6accb11e3963f950b29d11c91d5345d576729936d70455ef862bf69d972a1e84e8a7d1b9a17eb9b1fe65a7aab9dfb85d2c4bab650c6602f2d7e15ed2.js" integrity="sha512-gdx6PmrMsR45Y/lQsp0RyR1TRdV2cpk21wRV74Yr9p2XKh6E6KfRuaF&#43;ubH&#43;Zaequd&#43;4XSxLq2UMZgLy1&#43;Fe0g==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>

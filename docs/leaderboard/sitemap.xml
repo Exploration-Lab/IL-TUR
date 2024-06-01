@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    <url>
+      <loc>/docs/leaderboard/introduction/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/all-task-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/lner-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/rr-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/cjpe-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/bail-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/lsi-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/pcr-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/leaderboard/summ-leaderboard/</loc>
+      <lastmod>2020-11-16T13:59:39+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    </urlset>
