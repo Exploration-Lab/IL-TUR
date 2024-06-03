@@ -5,7 +5,7 @@ This repository contains the official release of the following paper:
 
 **IL-TUR: Benchmark for Legal Text Understanding and Reasoning**<br>
 
-**Authors:** Abhinav Joshi, Akshat Sharma, Shounak Paul, Pawan Goyal, Saptarshi Ghosh, Ashutosh Modi <br>
+**Authors:** Abhinav Joshi, Shounak Paul, Akshat Sharma, Pawan Goyal, Saptarshi Ghosh, Ashutosh Modi <br>
 
 **Abstract:** 
 *Legal systems worldwide are inundated with exponential growth in cases and documents. To streamline the legal system, there is an imminent need to develop NLP and ML techniques for automatically processing and understanding legal documents. However, evaluating and comparing various NLP models (e.g., LLMs) developed specifically for the legal domain is challenging. This paper address this challenge by proposing IL-TUR: Benchmark for Legal Text Understanding and Reasoning. We propose various domain-specific tasks that address different aspects of the legal domain from the point of view of understanding and reasoning. We also present baseline models for each task, outlining the gap between the LLM-based models and ground truth. A public leaderboard has been created where the research community can upload and test legal text understanding systems on various metrics, thus fostering research in the legal domain.*
