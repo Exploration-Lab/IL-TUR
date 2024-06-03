@@ -10,13 +10,6 @@
   </url>
   
   <url>
-    <loc>/docs/leaderboard_pre/introduction/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/tasks/introduction/</loc>
     <lastmod>2020-10-06T08:48:57+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,29 +24,8 @@
   </url>
   
   <url>
-    <loc>/docs/leaderboard_pre/all-task-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/lner-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/tasks/legal-named-entity-recognition-l-ner/</loc>
     <lastmod>2020-10-06T08:48:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/rr-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -66,22 +38,8 @@
   </url>
   
   <url>
-    <loc>/docs/leaderboard_pre/cjpe-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/docs/tasks/court-judgment-prediction-with-explanation-cjpe/</loc>
     <lastmod>2020-10-06T08:48:57+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/bail-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -96,27 +54,6 @@
   <url>
     <loc>/blog/say-hello-to-doks/</loc>
     <lastmod>2020-11-04T09:19:42+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/lsi-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/pcr-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/summ-leaderboard/</loc>
-    <lastmod>2020-11-16T13:59:39+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -145,62 +82,6 @@
   <url>
     <loc>/docs/leaderboard/</loc>
     <lastmod>2020-10-06T08:48:45+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/leaderboard_pre/_index_pre/</loc>
-    <lastmod>2020-10-06T08:48:45+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/contact/contact-details/</loc>
-    <lastmod>2020-10-06T08:49:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/submit/submit/</loc>
-    <lastmod>2020-10-06T08:49:31+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/lorem/ipsum/dolor/</loc>
-    <lastmod>2022-01-18T20:01:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/lorem/ipsum/sit/</loc>
-    <lastmod>2022-01-18T20:05:19+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/lorem/ipsum/amet/consectetur/</loc>
-    <lastmod>2022-01-18T20:17:32+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/lorem/ipsum/amet/</loc>
-    <lastmod>2022-01-18T20:07:56+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/docs/lorem/ipsum/</loc>
-    <lastmod>2022-01-18T20:00:32+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

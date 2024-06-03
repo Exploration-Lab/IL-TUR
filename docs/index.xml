@@ -6,77 +6,7 @@
     <description>Recent content in Docs on </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2020 13:59:39 +0100</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introduction</title>
-      <link>/docs/leaderboard_pre/introduction/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/introduction/</guid>
-      <description>Evaluation Metrics #&#xD;Task Metrics Evaluation Script Legal Named Entity Recognition (L-NER) strict macro-F1 Link Rhetorical Role Labeling (RR) macro-F1 Link Court Judgment Prediction and Explanation (CJPE) macro-F1,ROUGE-L Link Bail Prediction (BAIL) macro-F1 Link Legal Statute Identification (LSI) macro-F1 Link Prior Case Retrieval (PCR) micro-F1@K Link Summarization (SUMM) ROUGE-L/BERT-SCORE Link We encourage submissions for the IL-TUR leaderboard. The leaderboard is open to all researchers and practitioners. The leaderboard is hosted on this webpage.</description>
-    </item>
-    <item>
-      <title>All Tasks Leaderboard</title>
-      <link>/docs/leaderboard_pre/all-task-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/all-task-leaderboard/</guid>
-      <description>Please note that the submitted results will be made public on the leaderboard.&#xA;Rank Team Name Model Resources LNER RR CJPE BAIL LSI PCR SUMM baseline IL-TUR Multiple [Paper][GitHub] 91.78 69.01 76.55,0.424 81 64.58 39.15 0.332/0.856 </description>
-    </item>
-    <item>
-      <title>L-NER Leaderboard</title>
-      <link>/docs/leaderboard_pre/lner-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/lner-leaderboard/</guid>
-      <description> Rank Name Model Resources macro-F1 baseline IL-TUR InLegalBERT + CRF [Paper][Model][Code] 91.78 </description>
-    </item>
-    <item>
-      <title>RR Leaderboard</title>
-      <link>/docs/leaderboard_pre/rr-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/rr-leaderboard/</guid>
-      <description> Rank Name Model Resources macro-F1 baseline IL-TUR MTL-BERT [Paper][GitHub] 69.01 </description>
-    </item>
-    <item>
-      <title>CJPE Leaderboard</title>
-      <link>/docs/leaderboard_pre/cjpe-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/cjpe-leaderboard/</guid>
-      <description> Rank TeamName Model Resources macro-F1 ROUGE-L baseline IL-TUR XLNet + BiGRU [Paper][GitHub] 76.55 0.424 </description>
-    </item>
-    <item>
-      <title>BAIL Leaderboard</title>
-      <link>/docs/leaderboard_pre/bail-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/bail-leaderboard/</guid>
-      <description> Rank TeamName Model Resources macro-F1 baseline IL-TUR TF-IDF + IndicBERT [Paper][GitHub] 81.0 </description>
-    </item>
-    <item>
-      <title>LSI Leaderboard</title>
-      <link>/docs/leaderboard_pre/lsi-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/lsi-leaderboard/</guid>
-      <description> Rank Name Model Resources macro-F1 baseline IL-TUR InLegalBERT + BiLSTM + Attn. [Paper][Model][Code] 82.42 </description>
-    </item>
-    <item>
-      <title>PCR Leaderboard</title>
-      <link>/docs/leaderboard_pre/pcr-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/pcr-leaderboard/</guid>
-      <description> Rank Name Model Resources micro-F1@K baseline IL-TUR Event-based Model [Paper][GitHub] 39.15 </description>
-    </item>
-    <item>
-      <title>SUMM Leaderboard</title>
-      <link>/docs/leaderboard_pre/summ-leaderboard/</link>
-      <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
-      <guid>/docs/leaderboard_pre/summ-leaderboard/</guid>
-      <description> Rank Name Model Resources ROUGE-L BERT-SCORE baseline IL-TUR Legal-LED [Paper][GitHub] 0.332 0.856 </description>
-    </item>
-    <item>
-      <title>Leaderboards</title>
-      <link>/docs/leaderboard_pre/_index_pre/</link>
-      <pubDate>Tue, 06 Oct 2020 08:48:45 +0000</pubDate>
-      <guid>/docs/leaderboard_pre/_index_pre/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
