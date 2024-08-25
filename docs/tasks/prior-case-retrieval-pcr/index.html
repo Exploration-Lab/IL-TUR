@@ -10,7 +10,7 @@
 
   <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
 
-  <link rel="stylesheet" href="../../../main.ba51a038d637547d790549043f34cd58d2ea3fd2af2af988d4feaed6c45da954c8895af8a86a21d4f04b329ecb7d66b2bf6bacbe800e91f018b1f17d003e150f.css" integrity="sha512-ulGgONY3VH15BUkEPzTNWNLqP9KvKvmI1P6u1sRdqVTIiVr4qGoh1PBLMp7LfWayv2usvoAOkfAYsfF9AD4VDw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../main.6739ccfee9b036dd490763f69452611ed2f8291d0a786d422069ea48a762fd9cd98f3476f971838b38034a87839e9d5e5d7d65c9b3151e6439a2a16091e59ba2.css" integrity="sha512-ZznM/umwNt1JB2P2lFJhHtL4KR0KeG1CIGnqSKdi/ZzZjzR2&#43;XGDizgDSoeDnp1eXX1lybMVHmQ5oqFgkeWbog==" crossorigin="anonymous">
 <noscript><style>img.lazyload { display: none; }</style></noscript>
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -253,6 +253,11 @@
             
               
                 
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-machine-translation-l-mt/">Legal Machine Translation (L-MT)</a></li>
+              
+            
+              
+                
                 <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
               
             
@@ -382,6 +387,11 @@
             
               
                 
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-machine-translation-l-mt/">Legal Machine Translation (L-MT)</a></li>
+              
+            
+              
+                
                 <li><a class="docs-link rounded" href="../../../docs/tasks/legal-statute-identification-lsi/">Legal Statute Identification (LSI)</a></li>
               
             
@@ -465,6 +475,11 @@
               
                 
                 <li><a class="docs-link rounded" href="../../../docs/tasks/bail-prediction-bail/">Bail Prediction (BAIL)</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="../../../docs/tasks/legal-machine-translation-l-mt/">Legal Machine Translation (L-MT)</a></li>
               
             
               
@@ -655,34 +670,11 @@ IL-PCR corpus (7,070 documents) is created by scraping legal documents (availabl
 Individuals&rsquo; and organizations&rsquo; names are anonymized to remove any biases in the models.
 Each query case is annotated with ground truth labels indicating the relevant candidates&rsquo; cases.</p>
 <h3 id="dataset-format">Dataset Format <a href="#dataset-format" class="anchor" aria-hidden="true">#</a></h3>
-<p>The dataset directory structure is as follows:</p>
-<pre><code>IL-PCR
-+-- ik_train.zip
-+-- ik_dev.zip
-+-- ik_test.zip
-</code></pre>
-<p>On extracting each zip file, we get the following structure:</p>
-<pre><code>ik_&lt;split&gt;          // split is either of train/dev/test
-+-- candidate       // folder containing txt files for each candidate case document
-+-- query           // folder containing txt files for each query case document
-+-- test.csv        // csv file linking query to candidates
-+-- test.json       // json file linking query to candidates
-</code></pre>
-<p>Each of the txt files represent a case document, and contain the text, split into sentences.
-<var>test.json</var> has the following format:</p>
+<p>Each document (json) has the following format:</p>
 <pre><code>Dict{
-  &quot;Query Set&quot;: List[
-    Dict{                                   // each Dict stores the links between a query and its relevant candidates
-      &quot;id&quot;: String                          // query filename
-      &quot;query_name&quot;: String                  // query filename
-      &quot;relevant candidates&quot;: List[String]   // each String is a relevant candidate filename
-    }
-  ]
-  &quot;Candidate Set&quot;: List[                    // List stores all the candidate filenames (global)
-    Dict{                                   
-      &quot;id&quot;: String
-    }
-  ]
+  'id': string  // case identifier
+  'text': List(string)  // full case document sentences
+  'relevant_candidates': List(string) // list of relevant candidate document IDs
 }
 </code></pre>
 <h2 id="task-evaluation">Task Evaluation <a href="#task-evaluation" class="anchor" aria-hidden="true">#</a></h2>
@@ -791,7 +783,7 @@ The prediction (i.e., whether a candidate is cited or not) is done based on the 
 <script src="../../../js/bootstrap.min.15313dd4490a45b54921fbb037b0f1604fa6eddfe67100af9b39898cd23851ca02141e2a418fa9507f6e733027b92ae49f783f3cedfbe70a8950801e6c6cc14c.js" integrity="sha512-FTE91EkKRbVJIfuwN7DxYE&#43;m7d/mcQCvmzmJjNI4UcoCFB4qQY&#43;pUH9uczAnuSrkn3g/PO375wqJUIAebGzBTA==" crossorigin="anonymous" defer></script>
   <script src="../../../js/highlight.min.17f73fa17c6adeca2b494377c412c2a684a1c0b901802a2d9b1cb61f9558d776101d84515109359aa76362e7c1a523260e61737f62925bba36d5690b8c233c8d.js" integrity="sha512-F/c/oXxq3sorSUN3xBLCpoShwLkBgCotmxy2H5VY13YQHYRRUQk1mqdjYufBpSMmDmFzf2KSW7o21WkLjCM8jQ==" crossorigin="anonymous" defer></script>
   <script src="../../../main.min.f9fa8b49f44c6fc5699befb6e4181b55cd3f4af698f4d46cb2fb2cddfd3bf47fc715411d739038a888077f99aa2ad54b22ad897a6a9f2e54f5311a80b8cf521b.js" integrity="sha512-&#43;fqLSfRMb8Vpm&#43;&#43;25BgbVc0/SvaY9NRssvss3f079H/HFUEdc5A4qIgHf5mqKtVLIq2JemqfLlT1MRqAuM9SGw==" crossorigin="anonymous" defer></script>
-  <script src="../../../index.min.416379cf36f398d297cc781ed19862078a96e96e9bade5f18caf28282fcdfaee04080ba68e50b118f4d1842e1ed03100e743c4c6a845a3647c2560c67871c42d.js" integrity="sha512-QWN5zzbzmNKXzHge0ZhiB4qW6W6breXxjK8oKC/N&#43;u4ECAumjlCxGPTRhC4e0DEA50PExqhFo2R8JWDGeHHELQ==" crossorigin="anonymous" defer></script>
+  <script src="../../../index.min.b1cb89caadeeb7133cbe285d75542cffddca602bb04343b06da4b5004e6098e5e05d668f6205a11b4824b9b7290efef36d9e094ab887a18fcd0894854f665236.js" integrity="sha512-scuJyq3utxM8vihddVQs/93KYCuwQ0OwbaS1AE5gmOXgXWaPYgWhG0gkubcpDv7zbZ4JSriHoY/NCJSFT2ZSNg==" crossorigin="anonymous" defer></script>
   
     
   </body>

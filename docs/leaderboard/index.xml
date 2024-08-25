@@ -13,7 +13,7 @@
       <link>/docs/leaderboard/leaderboard/</link>
       <pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate>
       <guid>/docs/leaderboard/leaderboard/</guid>
-      <description>Evaluation Metrics #&#xD;Task Metrics Evaluation Script Legal Named Entity Recognition (L-NER) strict macro-F1 Link Rhetorical Role Labeling (RR) macro-F1 Link Court Judgment Prediction and Explanation (CJPE) macro-F1,ROUGE-L Link Bail Prediction (BAIL) macro-F1 Link Legal Statute Identification (LSI) macro-F1 Link Prior Case Retrieval (PCR) micro-F1@K Link Summarization (SUMM) ROUGE-L/BERT-SCORE Link We encourage submissions for the IL-TUR leaderboard. The leaderboard is open to all researchers and practitioners. The leaderboard is hosted on this webpage.</description>
+      <description>Evaluation Metrics #&#xD;Task Metrics Evaluation Script Legal Named Entity Recognition (L-NER) strict macro-F1 Link Rhetorical Role Labeling (RR) macro-F1 Link Court Judgment Prediction and Explanation (CJPE) macro-F1,ROUGE-L Link Bail Prediction (BAIL) macro-F1 Link Legal Statute Identification (LSI) macro-F1 Link Prior Case Retrieval (PCR) micro-F1@K Link Summarization (SUMM) ROUGE-L/BERT-SCORE Link Legal Machine Translation (L-MT) BLEU/GLEU/chrF++ Link We encourage submissions for the IL-TUR leaderboard. The leaderboard is open to all researchers and practitioners.</description>
     </item>
   </channel>
 </rss>

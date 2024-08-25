@@ -44,6 +44,13 @@
       <description>Type of Task Binary Text Classification Dataset HLDC (Kapoor et al., 2022) Language Hindi No. of documents 900k Evaluation Metric macro-F1 Dataset Code Task Motivation and Description #&#xD;Majority of the pending cases in the Indian legal system are from the district-level courts. Moreover, among the pending cases in district courts, a significant chunk of cases have to do with bail application (Kapoor et al., 2022). Many of the district courts in India use regional language as the official language.</description>
     </item>
     <item>
+      <title>Legal Machine Translation (L-MT)</title>
+      <link>/docs/tasks/legal-machine-translation-l-mt/</link>
+      <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
+      <guid>/docs/tasks/legal-machine-translation-l-mt/</guid>
+      <description>Type of Task Text Generation Dataset MILPaC (Mahapatra et al., 2023) Language English + 9 Indic Languages No. of docs 17,853 pairs Type of summary Abstractive Evaluation Metric BLEU, GLEU, chrF++ Dataset Code Task Motivation and Description #&#xD;Although most legal documents in the Indian judiciary is written in English, only about 10% of the general population is comfortable in reading and understanding English. Moreover, different states in India have different languages.</description>
+    </item>
+    <item>
       <title>Legal Statute Identification (LSI)</title>
       <link>/docs/tasks/legal-statute-identification-lsi/</link>
       <pubDate>Tue, 06 Oct 2020 08:48:57 +0000</pubDate>
